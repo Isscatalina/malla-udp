@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Bachillerato UDP</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      color: #4a004a;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #ffc0cb;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #d63384;
+    }
+    label {
+      display: block;
+      font-size: 1.1em;
+      margin: 10px 0;
+      padding: 5px 10px;
+      border-left: 5px solid #ff69b4;
+      background-color: #ffe4ec;
+      border-radius: 5px;
+    }
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Malla Bachillerato<br>Administración y Economía UDP</h1>
+
+  <h2>1° Semestre</h2>
+  <label><input type="checkbox" id="ramo1"> Introducción a la Matemática</label>
+  <label><input type="checkbox" id="ramo2"> Introducción a las Tecnologías de Información</label>
+  <label><input type="checkbox" id="ramo3"> Introducción a la Economía</label>
+  <label><input type="checkbox" id="ramo4"> Taller de Habilidades de Gestión</label>
+  <label><input type="checkbox" id="ramo5"> Curso de Inglés General I</label>
+
+  <h2>2° Semestre</h2>
+  <label><input type="checkbox" id="ramo6"> Matemática I</label>
+  <label><input type="checkbox" id="ramo7"> Programación</label>
+  <label><input type="checkbox" id="ramo8"> Fundamentos de Administración I</label>
+  <label><input type="checkbox" id="ramo9"> Taller de Comunicación I</label>
+  <label><input type="checkbox" id="ramo10"> Curso de Inglés General II</label>
+
+  <script>
+    // Guardar y cargar el estado de los checkboxes
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      const id = checkbox.id;
+      // Cargar estado
+      checkbox.checked = localStorage.getItem(id) === 'true';
+      // Guardar al hacer clic
+      checkbox.addEventListener('change', () => {
+        localStorage.setItem(id, checkbox.checked);
+      });
+    });
+  </script>
+</body>
+</html>
